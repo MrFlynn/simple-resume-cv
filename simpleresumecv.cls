@@ -173,12 +173,12 @@ BoldItalicFont=FreeSerifBoldItalic]
 \newcommand{\UseNoteFont}{\UseHeadingFont\fontsize{8pt}{9.6pt}\selectfont}
 \newcommand{\UseTitleFont}{\UseHeadingFont\fontsize{28pt}{33.6pt}\selectfont\bfseries}
 \newcommand{\UseSubTitleFont}{\normalfont\fontsize{8.6pt}{10.3pt}\selectfont}
-\newcommand{\UseSectionFont}{\UseHeadingFont\fontsize{9pt}{11pt}\selectfont\bfseries}
+\newcommand{\UseSectionFont}{\UseHeadingFont\fontsize{10pt}{12pt}\selectfont\bfseries}
 \newcommand{\UseSubSectionFont}{\UseHeadingFont\fontsize{8.6pt}{10.3pt}\selectfont\bfseries}
 \newcommand{\UseDetailFont}{\normalfont\fontsize{8.6pt}{10.3pt}\selectfont}
+\newcommand{\UseContentFont}{\normalfont\fontsize{11pt}{13.2pt}\selectfont}
 
-% Symbols (Unicode).
-% See: https://unicode-table.com/en/
+% Symbols (unicode).
 \newcommand{\BulletSymbol}{{\normalfont\fontsize{6.5}{7.8}\selectfont\raisebox{0.17em}{\char"25A0}}}
 \newcommand{\SubBulletSymbol}{{\normalfont\fontsize{6}{7.2}\selectfont\raisebox{0.17em}{\char"25CF}}}
 \newcommand{\SubSubBulletSymbol}{{\normalfont\fontsize{6}{7.2}\selectfont\raisebox{0.17em}{\char"25CB}}}
@@ -191,12 +191,10 @@ BoldItalicFont=FreeSerifBoldItalic]
 
 \ifnum\TypesetInDraftMode=0
 \newcommand{\HeaderText}{}
-\newcommand{\FooterText}{\hfill\PageKOfN\hfill}
+\newcommand{\FooterText}{}
 \else
 \newcommand{\HeaderText}{}
-\newcommand{\FooterText}{\null\hphantom{\DraftStamp}\hfill%
-\PageKOfN\hfill%
-\DraftStamp\null}
+\newcommand{\FooterText}{}
 \fi
 
 \def\ps@plain{%
@@ -335,6 +333,7 @@ BoldItalicFont=FreeSerifBoldItalic]
 \parshape 1%
 \labelwidth \linewidth%
 \ignorespaces%
+\UseContentFont%
 }
 
 % Macro: Item (aligns horizontally with BulletItem).
